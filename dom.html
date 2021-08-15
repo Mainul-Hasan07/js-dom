@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #second-title{
+            background-color: lightcoral;
+            display: inline;
+        } */
+        /* .blog{
+            border: 2px solid orange;
+            margin: 5px;
+            padding: 5px;
+            border-radius: 10px;
+        } */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to my blog website</h1>
+    </header>
+    <main>
+       <section id="blogs" class="blogs">
+           <header>
+               <h2>Blogs list</h2>
+               <ul id="blog-list">
+                   <li>Blog-1</li>
+                   <li>Blog-2</li>
+                   <li>Blog-3</li>
+                   <li>Blog-4</li>
+               </ul>
+           </header>
+        <article class="blog">
+            <h3>My Awesome Blog-1</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa dolorum dignissimos repellat voluptatum asperiores saepe in, delectus tempora expedita, dolor itaque mollitia iste quod dolore molestias voluptate? Aliquid, tempora commodi!</p>
+        </article>
+        <article class="blog">
+            <h3 id="second-title">My Awesome Blog-2</h3>
+            <p>Minus veniam nemo maxime, neque nesciunt dolor corporis architecto, iure ut magni tempora eius explicabo tempore mollitia omnis libero assumenda sunt. Unde labore necessitatibus magni velit optio. Minima, doloribus voluptas.</p>
+        </article>
+        <article class="blog">
+            <h3 id="third-title">My Awesome Blog-3</h3>
+            <p>Repudiandae perferendis repellat vitae voluptas doloribus molestiae at. Modi iste accusantium fugit odit earum id rerum quo at ipsum, optio iure iusto corrupti architecto. Minus enim iure quaerat doloremque sint?</p>
+        </article>
+        <article class="blog">
+            <h3>My Awesome Blog-4</h3>
+            <p>Repudiandae perferendis repellat vitae voluptas doloribus molestiae at. Modi iste accusantium fugit odit earum id rerum quo at ipsum, optio iure iusto corrupti architecto. Minus enim iure quaerat doloremque sint?</p>
+        </article>
+       </section>
+    </main>
+    <script>
+        const student = {name: 'kissmot ali', age: 10, height: 60}
+       // console.log(document.body);
+       const blogTitles = document.getElementsByTagName('h3');
+       for(const h3 of blogTitles){
+        //    console.log(h3.innerText);
+       }
+
+       const blogDetails = document.getElementsByTagName('p');
+       for(const p of blogDetails){
+        //    console.log(p.innerText);
+       }
+
+       //explore getElementById
+       const secondTitle = document.getElementById('second-title');
+       secondTitle.style.textAlign = 'center';
+       const thirdTitle = document.getElementById('third-title');
+       thirdTitle.innerText = 'Title Updated by Js';
+       thirdTitle.style.backgroundColor = 'lightcoral';
+       thirdTitle.style.textAlign = 'center';
+
+      
+
+       //Create a element by using js
+       const li = document.createElement('li')
+       li.innerText = 'Blog-5';
+       const li2 = document.createElement('li');
+       li2.innerText = 'Blog-6';
+       //where to add
+       const ul = document.getElementById('blog-list');
+       
+
+       //append new element
+       ul.appendChild(li);
+       ul.appendChild(li2);
+
+
+
+       /* Add article */
+       const article = document.createElement('article');
+       article.classList.add('blog');
+      /*  const h3 = document.createElement('h3');
+       h3.innerText = 'My Awesome Blog-5';
+       const p = document.createElement('p');
+       p.innerText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa dolorum dignissimos repellat voluptatum asperiores saepe in, delectus tempora expedita, dolor itaque mollitia iste quod dolore molestias voluptate? Aliquid, tempora commodi';
+       article.appendChild(h3);
+       article.appendChild(p); */
+
+       article.innerHTML = `
+       <h3>My Awesome Blog-5</h3>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa dolorum dignissimos repellat voluptatum asperiores saepe in, delectus tempora expedita, dolor itaque mollitia iste quod dolore molestias voluptate? Aliquid, tempora commodi</p>
+       `
+       const article2 = document.createElement('article');
+       article2.classList.add('blog');
+
+       article2.innerHTML = `
+       <h3>My Awesome Blog-6</h3>
+       <p>Minus veniam nemo maxime, neque nesciunt dolor corporis architecto, iure ut magni tempora eius explicabo tempore mollitia omnis libero assumenda sunt. Unde labore necessitatibus magni velit optio. Minima, doloribus voluptas.</p>
+       `
+
+       const blogSection = document.getElementById('blogs');
+       blogSection.appendChild(article);
+       blogSection.appendChild(article2);
+
+       /* End article */
+
+        //explore getElementsByClassName
+        const blogs = document.getElementsByClassName('blog');
+       for(const blog of blogs){
+           blog.style.border = '2px solid orange';
+           blog.style.borderRadius = '10px';
+           blog.style.padding = '5px';
+           blog.style.margin = '5px';
+       }
+
+    </script>
+</body>
+</html>
